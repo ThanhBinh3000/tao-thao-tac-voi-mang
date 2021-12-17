@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo thao tác với mảng</title>
+</head>
+<body>
+<input type="text" id="txtValue"/>
+<input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"/>
+<input type="button" id="btnDisplay" value="Display" onclick="display_array();"/>
+<div id="result"></div>
+<script>
+       let x=0;
+       let array=[];
+       function add_element_to_array() {
+           array[x] =document.getElementById("txtValue").value;
+           alert("Element: " + array[x] + "đã thêm vào chỉ mục" + x);//element là thành phần
+           x++;
+           document.getElementById("txtValue ").value = "";
+       }
+       function display_array() {
+           let e = "<hr/>";// <hr> có thể vẫn hiển thị đường kẻ ngang trên trình duyệt
+           //Tạo biến e để lưu thẻ <hr> mỗi lần hiển thị một phần tử thẻ <hr> sử dụng để phân cách các phần tử trong mảng: var e = "<hr/>"
+           for (let i = 0; i < array.length; i++) {
+               e += "Element " + i + " = " + array[i] + "<br/>";
+           }
+           document.getElementById("result").innerHTML = e; //result là kết quả
+       }
+</script>
+</body>
+</html>
